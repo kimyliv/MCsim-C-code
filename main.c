@@ -31,7 +31,7 @@ int main(void) {
 
 
 
-    int Startsample = 7e5, Samplerate = 20, couplingconst = 1;
+    int Startsample = 7e5, OneMCstep = gridsize*gridsize, couplingconst = 1;
     int i, j, thinning, NumberOfSamples;
     double En, EnM, EnM2, Mtemp, M, M2 ,M4 , newAngle, p;
     double g, chi, cv, energydiff;
@@ -84,7 +84,7 @@ int main(void) {
 
                 thinning++;
 
-                if (thinning > Samplerate){
+                if (thinning > OneMCstep){
 
                     Mtemp = magnetization(gridsize, lattice); // Find magnetization of state to be sampled
 
